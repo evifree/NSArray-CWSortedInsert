@@ -40,7 +40,7 @@
   while (index < topIndex) {
     NSUInteger midIndex = (index + topIndex) / 2;
     id testObject = objectAtIndexImp(self, @selector(objectAtIndex:), midIndex);
-    if (compare(anObject, testObject, context) < 0) {
+    if (compare(anObject, testObject, context) > 0) {
       index = midIndex + 1;
     } else {
       topIndex = midIndex;
