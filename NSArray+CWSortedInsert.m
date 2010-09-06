@@ -72,9 +72,6 @@ static NSComparisonResult cw_DescriptorCompare(id a, id b, void* descriptors) {
   for (NSSortDescriptor* sortDescriptor in (NSArray*)descriptors) {
 		result = (NSComparisonResult)cw_compareObjectToObjectImp(sortDescriptor, @selector(compareObject:toObject:), a, b);
     if (result != NSOrderedSame) {
-      if (!cw_ascendingImp(sortDescriptor, @selector(ascending))) {
-      	result = 0 - result;
-      }
       break;
     }
   }
